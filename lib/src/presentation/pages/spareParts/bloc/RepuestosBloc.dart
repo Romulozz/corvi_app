@@ -1,12 +1,12 @@
 import 'package:corvi_app/src/domain/models/Repuestos.dart';
 import 'package:corvi_app/src/domain/utils/Resource.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:corvi_app/src/domain/useCases/auth/AuthUseCases.dart'; // Usando AuthUseCases como en LoginBloc
+import 'package:corvi_app/src/domain/useCases/repuestos/RepuestosUseCases.dart'; // Usando AuthUseCases como en LoginBloc
 import 'RepuestosEvent.dart';
 import 'RepuestosState.dart';
 
 class RepuestosBloc extends Bloc<RepuestosEvent, RepuestosState> {
-  final AuthUseCases authUseCases; // Casos de uso
+  final RepuestosUseCases authUseCases; // Casos de uso
 
   RepuestosBloc(this.authUseCases) : super(RepuestosInitial()) {
     on<FetchRepuestos>(_onFetchRepuestos);

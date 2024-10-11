@@ -36,6 +36,4 @@ class DescriptionPartsError extends DescriptionPartsState {
 
   @override
   List<Object?> get props => [error];
-
 }
-

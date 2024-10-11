@@ -4,7 +4,7 @@ import 'package:corvi_app/src/domain/utils/Resource.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class AuthServices {
+class RepuestosService {
   // Método para realizar la petición GET de /repuestos
   Future<Resource<List<Repuesto>>> fetchRepuestos() async {
     try {

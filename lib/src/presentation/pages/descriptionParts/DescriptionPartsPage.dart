@@ -1,3 +1,5 @@
+import 'package:corvi_app/src/presentation/pages/shoppingCart/bloc/CartBloc.dart';
+import 'package:corvi_app/src/presentation/pages/shoppingCart/bloc/CartEvent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/DescriptionPartsBloc.dart';
@@ -181,7 +183,19 @@ class DescriptionPartsPage extends StatelessWidget {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            // Lógica para agregar al carrito
+                            final currentState =
+                                context.read<DescriptionPartsBloc>().state;
+                            if (currentState is DescriptionPartsLoaded) {
+                              context.read<CartBloc>().add(
+                                    AddProductToCart(currentState.repuesto,
+                                        currentState.quantity),
+                                  );
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                    content: Text(
+                                        '${currentState.repuesto.nombre} agregado al carrito')),
+                              );
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFFBCBCBC),

@@ -1,20 +1,20 @@
-import 'package:corvi_app/src/data/dataSource/remote/services/AuthServices.dart';
-import 'package:corvi_app/src/data/repository/AuthRepositoryImpl.dart';
-import 'package:corvi_app/src/domain/repository/AuthRepository.dart';
-import 'package:corvi_app/src/domain/useCases/auth/AuthUseCases.dart';
-import 'package:corvi_app/src/domain/useCases/auth/RepuestosUseCase.dart';
+import 'package:corvi_app/src/data/dataSource/remote/services/RepuestosService.dart';
+import 'package:corvi_app/src/data/repository/RepuestosRepositoryImpl.dart';
+import 'package:corvi_app/src/domain/repository/RepuestosRepository.dart';
+import 'package:corvi_app/src/domain/useCases/repuestos/RepuestosUseCase.dart';
+import 'package:corvi_app/src/domain/useCases/repuestos/RepuestosUseCases.dart';
 import 'package:injectable/injectable.dart';
 
 @module
 abstract class AppModule {
   @injectable
-  AuthServices get authServices => AuthServices();
+  RepuestosService get repuestosServices => RepuestosService();
 
   @injectable
-  AuthRepository get authRepository => AuthRepositoryImpl(authServices);
+  RepuestosRepository get authRepository => RepuestosRepositoryImpl(repuestosServices);
 
   @injectable
-  AuthUseCases get authUseCases => AuthUseCases(
+  RepuestosUseCases get repuestosUseCases => RepuestosUseCases(
     repuestos: RepuestosUseCase(authRepository)
   );
 }

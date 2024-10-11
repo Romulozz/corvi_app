@@ -1,7 +1,7 @@
 import 'package:corvi_app/src/domain/models/Repuestos.dart';
 import 'package:corvi_app/src/domain/utils/Resource.dart';
 
-abstract class AuthRepository {
+abstract class RepuestosRepository {
   // Método para obtener la lista de repuestos
   Future<Resource<List<Repuesto>>> fetchRepuestos();
 

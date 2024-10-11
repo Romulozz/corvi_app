@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'DescriptionPartsEvent.dart';
 import 'DescriptionPartsState.dart';
 import 'package:corvi_app/src/domain/utils/Resource.dart';
-import 'package:corvi_app/src/domain/useCases/auth/AuthUseCases.dart';
+import 'package:corvi_app/src/domain/useCases/repuestos/RepuestosUseCases.dart';
 
 class DescriptionPartsBloc
     extends Bloc<DescriptionPartsEvent, DescriptionPartsState> {
-  final AuthUseCases authUseCases;
+  final RepuestosUseCases authUseCases;
 
   DescriptionPartsBloc(this.authUseCases) : super(DescriptionPartsInitial()) {
     // Registra los eventos que maneja este Bloc

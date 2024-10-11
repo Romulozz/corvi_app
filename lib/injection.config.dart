@@ -8,11 +8,13 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:corvi_app/src/data/dataSource/remote/services/AuthServices.dart'
+import 'package:corvi_app/src/data/dataSource/remote/services/RepuestosService.dart'
     as _i594;
 import 'package:corvi_app/src/di/AppModule.dart' as _i532;
-import 'package:corvi_app/src/domain/repository/AuthRepository.dart' as _i252;
-import 'package:corvi_app/src/domain/useCases/auth/AuthUseCases.dart' as _i248;
+import 'package:corvi_app/src/domain/repository/RepuestosRepository.dart'
+    as _i252;
+import 'package:corvi_app/src/domain/useCases/repuestos/RepuestosUseCases.dart'
+    as _i248;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -28,9 +30,9 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final appModule = _$AppModule();
-    gh.factory<_i594.AuthServices>(() => appModule.authServices);
-    gh.factory<_i252.AuthRepository>(() => appModule.authRepository);
-    gh.factory<_i248.AuthUseCases>(() => appModule.authUseCases);
+    gh.factory<_i594.RepuestosService>(() => appModule.repuestosServices);
+    gh.factory<_i252.RepuestosRepository>(() => appModule.authRepository);
+    gh.factory<_i248.RepuestosUseCases>(() => appModule.repuestosUseCases);
     return this;
   }
 }

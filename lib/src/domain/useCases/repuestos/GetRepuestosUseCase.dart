@@ -1,9 +1,9 @@
-import 'package:corvi_app/src/domain/repository/AuthRepository.dart';
+import 'package:corvi_app/src/domain/repository/RepuestosRepository.dart';
 import 'package:corvi_app/src/domain/utils/Resource.dart';
 import 'package:corvi_app/src/domain/models/Repuestos.dart';
 
 class GetRepuestosUseCase {
-  final AuthRepository repository;
+  final RepuestosRepository repository;
 
   GetRepuestosUseCase(this.repository);
 
